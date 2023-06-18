@@ -1,0 +1,36 @@
+{
+  "base": {
+    "epochs": 2,
+    "image_size": 256,
+    "channels": 3,
+    "n_classes": 4
+  },
+  "dataset": {
+    "train": "deep_learning/apple_dataset/train",
+    "val": "deep_learning/apple_dataset/val",
+    "test": "deep_learning/apple_dataset/test"
+  },
+  "generator": {
+    "rotation_range": 10,
+    "horizontal_flip": true
+  },
+  "datagen": {
+    "batch_size": 32,
+    "class_mode": "sparse"
+  },
+  "compile": {
+    "optimizer": "adam",
+    "loss": "tf.keras.losses.SparseCategoricalCrossentropy(from_logits=False)",
+    "metrics": ["accuracy"]
+  },
+  "fit": {
+    "steps_per_epoch": 47,
+    "batch_size": 32,
+    "validation_steps": 6,
+    "verbose": 1
+  },
+  "save": {
+    "file": "deep_learning/saved_models/apple-model-{}.h5" 
+  }
+
+}
